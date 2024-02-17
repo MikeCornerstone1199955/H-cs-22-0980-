@@ -1,0 +1,18 @@
+
+<?php
+
+function Palindrome($s) {
+    $cleaned = strtolower(preg_replace("/[^A-Za-z0-9]/", '', $s));
+    return $cleaned == strrev($cleaned);
+}
+
+echo "Enter your string to check palindrome: ";
+$string = fgets(STDIN);
+if (Palindrome($string)) {
+    echo "$string is a palindrome.";
+} else {
+    echo "$string is not a palindrome.";
+}
+
+?>
+￼Enter
