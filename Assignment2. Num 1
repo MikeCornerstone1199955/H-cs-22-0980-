@@ -1,0 +1,17 @@
+<?php
+     echo "Enter your cgpa: ";
+     $cgpa = trim(fgets(STDIN));
+     if ($cgpa >= 4.0) {
+        echo 'Excellent (A)';
+    } elseif ($cgpa >= 3.5) {
+        echo 'Very Good (B+)';
+    } elseif ($cgpa >= 3.0) {
+        echo 'Good (B)';
+    } elseif ($cgpa >= 2.5) {
+        echo 'Fair (C+)';
+    } elseif ($cgpa >= 2.0) {
+        echo 'Pass (C)';
+    } else {
+        echo = 'Fail (F)';
+    }
+?>
