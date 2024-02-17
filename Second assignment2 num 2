@@ -1,0 +1,34 @@
+<?php
+
+function validDate($year, $month, $day) {
+    return checkdate($month, $day, $year);
+}
+
+function LeapYear($year) {
+    return (($year % 4 == 0) && ($year % 100 != 0)) || ($year % 400 == 0);
+}
+
+function DayOfWeek($year, $month, $day) {
+    $timestamp = mktime(0, 0, 0, $month, $day, $year);
+    return date('l', $timestamp);
+}
+
+echo ("Enter the year: ");
+$year = trim(fgets(STDIN));
+echo ("Enter the month (1-12): ");
+$month = trim(fgets(STDIN));
+echo ("Enter the day: ");
+$day = trim(fgets(STDIN));
+
+if (!validDate($year, $month, $day)) {
+    echo "Invalid date entered. Please enter a valid date.\n";
+    exit();
+}
+
+if (LeapYear($year) && $month == 2 && $day == 29) {
+    echo "The entered date is valid, and it's a leap day.\n";
+} else {
+    $dayOfWeek = DayOfWeek($year, $month, $day);
+    echo "The entered date is valid. It falls on a $dayOfWeek.\n";
+}
+?>
